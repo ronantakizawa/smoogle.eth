@@ -37,7 +37,7 @@ const Home: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <h1 className="text-3xl font-bold text-center text-gray-800">Smoogle.eth</h1>
-      <h4 className="text-2xl mt-4  text-center text-gray-500">A semantic Smart Contract Search Engine</h4>
+      <h4 className="text-2xl mt-4  text-center text-gray-500">A Semantic Smart Contract Search Engine on Ethereum</h4>
       <form onSubmit={handleSearch} className="mt-4 flex flex-col items-center">
         <input
           type="text"
