@@ -5,7 +5,7 @@ import { ClipLoader } from 'react-spinners'; // Step 1: Import ClipLoader
 
 const Home: React.FC = () => {
   const [query, setQuery] = useState<string>('');
-  const [results, setResults] = useState<Array<{ Title: string; URL: string, Contract:string, Creator:string,}>>([]);
+  const [results, setResults] = useState<Array<{ Title: string; URL: string, Contract:string, Creator:string,Metadata:string}>>([]);
   const [loading, setLoading] = useState<boolean>(false); // Step 2: Add a loading state
   const pc = new Pinecone({
     apiKey: process.env.NEXT_PUBLIC_API_KEY ?? "KEY",
@@ -30,7 +30,8 @@ const Home: React.FC = () => {
         Title: result.metadata.tag,
         URL: result.metadata.url,
         Contract: result.metadata.contractaddress,
-        Creator: result.metadata.creatoraddress
+        Creator: result.metadata.creatoraddress,
+        Metadata:result.metadata.metadata
 
       })));
     } catch (error) {
@@ -74,6 +75,7 @@ const Home: React.FC = () => {
                 </a>
                 <p className='text-green-700 text-sm'>Contract Address: {result.Contract}</p>
                 <p className='text-green-700 text-sm'>Creator Address: {result.Creator}</p>
+                <p className='text-green-700 text-sm'>Tags: {result.Metadata}</p>
               </li>
             ))}
           </ul>
