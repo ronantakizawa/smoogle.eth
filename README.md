@@ -1,4 +1,4 @@
-**Smoogle**
+**Smoogle.eth**
 
 A semantic Smart Contract Search Engine
 
